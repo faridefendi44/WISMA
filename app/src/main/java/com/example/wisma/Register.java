@@ -27,17 +27,17 @@ public class Register extends AppCompatActivity {
     MaterialButton regbtn;
     TextView login;
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
-            startActivity(intent);
-            finish();
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+//            startActivity(intent);
+//            finish();
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

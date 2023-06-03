@@ -7,14 +7,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:383830276577:android:77a490cbd92f2562123aa0",
+        "mobilesdk_app_id": "1:383830276577:android:245ee895aa25e3b7123aa0",
         "android_client_info": {
           "package_name": "com.example.wisma"
         }
       },
       "oauth_client": [
         {
-          "client_id": "383830276577-4sb8dvbi93q54vg2t7fcim0mkjjsoldd.apps.googleusercontent.com",
+          "client_id": "383830276577-deeplmonupu7roqn4kplpvglcn09r5be.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wisma",
+            "certificate_hash": "dcdefc10d0e07e6f537ae0415f7fbe654f40c310"
+          }
+        },
+        {
+          "client_id": "383830276577-6fo59oeatjj056c07cj4ss9oa5619a7l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
