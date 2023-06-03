@@ -104,9 +104,9 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/loginbtn"
+        android:id="@+id/signupbtn"
         android:layout_below="@id/password"
-        android:text="LOGIN"
+        android:text="Register"
         android:layout_marginTop="40dp"
         android:background="#5D3EA8"
         android:backgroundTint="@color/design_default_color_secondary"

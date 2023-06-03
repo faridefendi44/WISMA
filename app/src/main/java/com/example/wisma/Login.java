@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.IntentSender;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +26,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
 
         login_google=findViewById(R.id.login_google);
         MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
@@ -89,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 oneTapClient.beginSignIn(signUpRequest)
-                        .addOnSuccessListener(MainActivity.this, new OnSuccessListener<BeginSignInResult>() {
+                        .addOnSuccessListener(Login.this, new OnSuccessListener<BeginSignInResult>() {
                             @Override
                             public void onSuccess(BeginSignInResult result) {
                                 IntentSenderRequest intentSenderRequest =
@@ -98,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         })
-                        .addOnFailureListener(MainActivity.this, new OnFailureListener() {
+                        .addOnFailureListener(Login.this, new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 // No Google Accounts found. Just continue presenting the signed-out UI.
