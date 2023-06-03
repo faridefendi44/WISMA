@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "383830276577",
+    "project_id": "warta-def17",
+    "storage_bucket": "warta-def17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383830276577:android:77a490cbd92f2562123aa0",
+        "android_client_info": {
+          "package_name": "com.example.wisma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383830276577-4sb8dvbi93q54vg2t7fcim0mkjjsoldd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-NYpRn54rGiwDh55qd8pBLdR-Ubz9Q_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383830276577-4sb8dvbi93q54vg2t7fcim0mkjjsoldd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
