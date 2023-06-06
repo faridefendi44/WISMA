@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F1F1F1"
-    tools:context=".Register">
+    tools:context=".Login">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/register"
-        android:text="Register"
+        android:id="@+id/signin"
+        android:text="Login"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
-        android:layout_below="@+id/register"
+        android:layout_below="@+id/signin"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:id="@+id/tusername"
@@ -35,7 +35,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/regusername"
+        android:id="@+id/logusername"
         android:layout_below="@id/tusername"
         android:background="#fff"
         android:hint="Enter Your Email"
@@ -46,13 +46,11 @@
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="20dp"/>
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:layout_below="@+id/regusername"
+        android:layout_below="@+id/logusername"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:id="@+id/tpassword"
@@ -64,7 +62,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/regpassword"
+        android:id="@+id/logpassword"
         android:layout_below="@id/tpassword"
         android:background="#ffffff"
         android:hint="Enter Your Password"
@@ -85,9 +83,9 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/signupbtn"
-        android:layout_below="@id/regpassword"
-        android:text="Register"
+        android:id="@+id/loginbtn"
+        android:layout_below="@id/logpassword"
+        android:text="LOGIN"
         android:layout_marginTop="40dp"
         android:background="#5D3EA8"
         android:backgroundTint="@color/design_default_color_secondary"
@@ -128,6 +126,7 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -144,15 +143,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/login"
+            android:id="@+id/signup"
             android:textStyle="bold"
             android:textColor="#232325"
-            android:text="Sign In"
+            android:text="Sign Up"
             android:layout_centerHorizontal="true"/>
 
     </LinearLayout>
-
-
 
 
 </RelativeLayout>
