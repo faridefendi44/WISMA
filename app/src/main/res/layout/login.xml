@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:text="Email"
         android:layout_below="@+id/signin"
         android:textSize="20dp"
         android:textColor="@color/black"
@@ -38,7 +38,7 @@
         android:id="@+id/logusername"
         android:layout_below="@id/tusername"
         android:background="#fff"
-        android:hint="Enter Your Username"
+        android:hint="Enter Your Email"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:layout_margin="20dp"

@@ -15,14 +15,14 @@
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="20dp"
         android:gravity="left"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:text="Email"
         android:layout_below="@+id/register"
         android:textSize="20dp"
         android:textColor="@color/black"
@@ -38,7 +38,7 @@
         android:id="@+id/regusername"
         android:layout_below="@id/tusername"
         android:background="#fff"
-        android:hint="Enter Your Username"
+        android:hint="Enter Your Email"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:layout_margin="20dp"
@@ -46,38 +46,13 @@
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="20dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Name"
-        android:layout_below="@+id/regusername"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:id="@+id/tname"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
 
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:layout_below="@id/tname"
-        android:background="#fff"
-        android:hint="Enter Your Name"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:layout_margin="20dp"
-        android:padding="15dp"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-        android:drawablePadding="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/regusername"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:id="@+id/tpassword"

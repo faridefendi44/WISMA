@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
         register = findViewById(R.id.signup);
         login_google = findViewById(R.id.login_google);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         client = GoogleSignIn.getClient(this,options);
