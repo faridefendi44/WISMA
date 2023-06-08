@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,25 +7,55 @@
     android:background="#F1F1F1"
     tools:context=".Dashboard">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/user_details"
-        android:textColor="@color/black"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="20dp"
-        android:gravity="left"/>
+    <LinearLayout
+        android:id="@+id/lay_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_rounded"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="15dp">
+        <ImageView
+            android:id="@+id/btn_aboutus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_aboutus"/>
 
-    <Button
+        <ImageView
+            android:id="@+id/btn_logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_logout"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/logout"
-        android:gravity="center"
-        android:layout_margin="160dp"
-        android:text="logout"/>
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/lay_button"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello,"
+            android:textStyle="bold"
+            android:textSize="45dp"/>
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Email"
+            android:textStyle="bold"
+            android:textSize="45dp"/>
+    </LinearLayout>
 
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Dashboard extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button logout;
+    Button aboutus, logout;
     TextView textView;
     FirebaseUser user;
     FirebaseAuth mAuth;
@@ -26,8 +26,9 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.dashboard);
 
         auth = FirebaseAuth.getInstance();
-        logout = findViewById(R.id.logout);
-        textView = findViewById(R.id.user_details);
+        logout = findViewById(R.id.btn_logout);
+        aboutus = findViewById(R.id.btn_aboutus);
+        textView = findViewById(R.id.lay_button);
         user = auth.getCurrentUser();
 
         if (user == null){
