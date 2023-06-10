@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Dashboard extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button aboutus, logout;
-    TextView textView;
+    ImageView aboutus, logout;
     FirebaseUser user;
     FirebaseAuth mAuth;
 
@@ -28,7 +29,6 @@ public class Dashboard extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         logout = findViewById(R.id.btn_logout);
         aboutus = findViewById(R.id.btn_aboutus);
-        textView = findViewById(R.id.lay_button);
         user = auth.getCurrentUser();
 
         if (user == null){
@@ -37,7 +37,6 @@ public class Dashboard extends AppCompatActivity {
             finish();
         }
         else {
-            textView.setText(user.getEmail());
         }
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
