@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/loginbtn"
         android:layout_below="@id/logpassword"
-        android:text="LOGINn"
+        android:text="LOGIN"
         android:layout_marginTop="40dp"
         android:background="#5D3EA8"
         android:backgroundTint="@color/design_default_color_secondary"

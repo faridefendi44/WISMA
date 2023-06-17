@@ -4,93 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper3"
+    android:padding="20dp"
     tools:context=".activities.Welcome3">
 
-
     <ImageView
-        android:id="@+id/wallpaper1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_right"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="101dp" />
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="24dp"
-        android:layout_height="16dp"
-        android:src="@drawable/img"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="575dp" />
-
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="24dp"
-        android:layout_height="16dp"
-        android:src="@drawable/img_1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="575dp" />
-
-    <ImageView
-        android:id="@+id/img2"
-        android:layout_width="24dp"
-        android:layout_height="16dp"
-        android:src="@drawable/img_1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="575dp" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="238dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Get Started"
-        android:textColor="@android:color/white"
-        android:textSize="30dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="321dp" />
-
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="350dp"/>
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="356dp"
-        android:layout_height="135dp"
-        android:text="We invite you to share your experiences by writing reviews and providing ratings for the visited locations. This will assist other users in choosing the right destinations based on their preferences. We hope you enjoy your experience using WISMA and discover the true charm of Malang through your journey. Happy exploring!"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="380dp" />
-
-    <Button
-        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:foreground="@drawable/border_btn"
-        android:text="Register"
-        android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="632dp" />
+        android:text="@string/welcome3"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:justificationMode="inter_word"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="410dp"/>
 
-    <Button
-        android:id="@+id/btnLogin"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:foreground="@drawable/border_btn"
-        android:text="Login"
-        android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="632dp" />
-
+        android:src="@drawable/pagination_3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="650dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
