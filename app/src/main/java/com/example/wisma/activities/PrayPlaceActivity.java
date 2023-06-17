@@ -1,14 +1,14 @@
 package com.example.wisma.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -67,7 +67,7 @@ public class PrayPlaceActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             progressDialog.dismiss();
-                            JSONArray playerArray = response.getJSONArray("tempat_ibadah");
+                            JSONArray playerArray = response.getJSONArray("religis");
                             for (int i = 0; i < playerArray.length(); i++) {
                                 JSONObject temp = playerArray.getJSONObject(i);
                                 ModelPrayPlace dataApi = new ModelPrayPlace();
