@@ -1,0 +1,116 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\"/>\r\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\"\r\n        android:usesCleartextTraffic=\"true\">\r\n        <activity android:exported=\"true\" android:name=\".activities.PrayPlaceActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.DetailWisataActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.WisataActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.DetailKulinerActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.KulinerActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.DetailHotelActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.HotelActivity\" />\r\n        <activity android:exported=\"true\" android:name=\".activities.MainActivity\" />\r\n        <activity  android:exported=\"true\" android:name=\".activities.Login\">\r\n            <intent-filter>\r\n                <action  android:name=\"android.intent.action.MAIN\" />\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"com.google.android.gms.version\"\r\n            android:value=\"@integer/google_play_services_version\" />\r\n        <meta-data\r\n            android:name=\"com.google.android.geo.API_KEY\"\r\n            android:value=\"AIzaSyDGE40VUbqjQOWoTPxugO9qUM1KfQNwgBY\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision deef87670465e6293fcba9420124104fc3554fa6)
++++ b/app/src/main/AndroidManifest.xml	(date 1686897127896)
+@@ -23,6 +23,9 @@
+         <activity android:exported="true" android:name=".activities.DetailHotelActivity" />
+         <activity android:exported="true" android:name=".activities.HotelActivity" />
+         <activity android:exported="true" android:name=".activities.MainActivity" />
++        <activity android:exported="true" android:name=".activities.UpdateReview" />
++        <activity android:exported="true" android:name=".activities.AddReview" />
++        <activity android:exported="true" android:name=".activities.Reviews" />
+         <activity  android:exported="true" android:name=".activities.Login">
+             <intent-filter>
+                 <action  android:name="android.intent.action.MAIN" />
+Index: app/src/main/java/com/example/wisma/api/Api.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.wisma.api;\r\n\r\n/**\r\n * Created by Azhar Rivaldi on 22-12-2019.\r\n */\r\n\r\npublic class Api {\r\n\r\n    public static String Hotel = \"https://dev.farizdotid.com/api/purwakarta/hotel\";\r\n    public static String Kuliner = \"https://dev.farizdotid.com/api/purwakarta/kuliner\";\r\n    public static String DetailKuliner = \"https://dev.farizdotid.com/api/purwakarta/kuliner/{id}\";\r\n    public static String TempatIbadah = \"https://dev.farizdotid.com/api/purwakarta/tempatibadah\";\r\n    public static String Wisata = \"https://dev.farizdotid.com/api/purwakarta/wisata\";\r\n    public static String DetailWisata = \"https://dev.farizdotid.com/api/purwakarta/wisata/{id}\";\r\n    /*public static String Komunitas = \"https://dev.farizdotid.com/api/purwakarta/komunitas\";\r\n    public static String DetailKomunitas = \"https://dev.farizdotid.com/api/purwakarta/komunitas/{id}\";\r\n    public static String KategoriKomunitas = \"https://dev.farizdotid.com/api/purwakarta/komunitas?kategori={nama_kategori}\";\r\n    public static String RuteAngkot = \"https://dev.farizdotid.com/api/purwakarta/ruteangkot\";*/\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/wisma/api/Api.java b/app/src/main/java/com/example/wisma/api/Api.java
+--- a/app/src/main/java/com/example/wisma/api/Api.java	(revision deef87670465e6293fcba9420124104fc3554fa6)
++++ b/app/src/main/java/com/example/wisma/api/Api.java	(date 1686931664523)
+@@ -6,12 +6,12 @@
+ 
+ public class Api {
+ 
+-    public static String Hotel = "https://dev.farizdotid.com/api/purwakarta/hotel";
+-    public static String Kuliner = "https://dev.farizdotid.com/api/purwakarta/kuliner";
+-    public static String DetailKuliner = "https://dev.farizdotid.com/api/purwakarta/kuliner/{id}";
+-    public static String TempatIbadah = "https://dev.farizdotid.com/api/purwakarta/tempatibadah";
+-    public static String Wisata = "https://dev.farizdotid.com/api/purwakarta/wisata";
+-    public static String DetailWisata = "https://dev.farizdotid.com/api/purwakarta/wisata/{id}";
++    public static String Hotel = "https://wisatamamalang.galoostore.com/api/hotels";
++    public static String Kuliner = "https://wisatamamalang.galoostore.com/api/kuliners";
++    public static String DetailKuliner = "https://wisatamamalang.galoostore.com/api/kuliners/{id}";
++    public static String TempatIbadah = "https://wisatamamalang.galoostore.com/api/religis";
++    public static String Wisata = "https://wisatamamalang.galoostore.com/api/wisatas";
++    public static String DetailWisata = "https://wisatamamalang.galoostore.com/api/wisatas/{id}";
+     /*public static String Komunitas = "https://dev.farizdotid.com/api/purwakarta/komunitas";
+     public static String DetailKomunitas = "https://dev.farizdotid.com/api/purwakarta/komunitas/{id}";
+     public static String KategoriKomunitas = "https://dev.farizdotid.com/api/purwakarta/komunitas?kategori={nama_kategori}";
+Index: app/src/main/java/com/example/wisma/activities/PrayPlaceActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.wisma.activities;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.os.Bundle;\r\nimport android.view.MenuItem;\r\nimport android.widget.Toast;\r\n\r\nimport com.androidnetworking.AndroidNetworking;\r\nimport com.androidnetworking.common.Priority;\r\nimport com.androidnetworking.error.ANError;\r\nimport com.androidnetworking.interfaces.JSONObjectRequestListener;\r\nimport com.example.wisma.R;\r\nimport com.example.wisma.adapter.PrayPlaceAdapter;\r\nimport com.example.wisma.api.Api;\r\nimport com.example.wisma.model.ModelPrayPlace;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class PrayPlaceActivity extends AppCompatActivity {\r\n\r\n    RecyclerView rvPrayPlace;\r\n    PrayPlaceAdapter prayPlaceAdapter;\r\n    ProgressDialog progressDialog;\r\n    List<ModelPrayPlace> modelPrayPlace = new ArrayList<>();\r\n    Toolbar tbPlace;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_pray_place);\r\n\r\n        tbPlace = findViewById(R.id.toolbar_place);\r\n        tbPlace.setTitle(\"Daftar Tempat Ibadah\");\r\n        setSupportActionBar(tbPlace);\r\n        assert getSupportActionBar() != null;\r\n        getSupportActionBar().setDisplayHomeAsUpEnabled(true);\r\n\r\n        progressDialog = new ProgressDialog(this);\r\n        progressDialog.setTitle(\"Mohon Tunggu\");\r\n        progressDialog.setCancelable(false);\r\n        progressDialog.setMessage(\"Sedang menampilkan data\");\r\n\r\n        rvPrayPlace = findViewById(R.id.rvPrayPlace);\r\n        rvPrayPlace.setHasFixedSize(true);\r\n        rvPrayPlace.setLayoutManager(new LinearLayoutManager(this));\r\n\r\n        getPrayPlace();\r\n    }\r\n\r\n    private void getPrayPlace() {\r\n        progressDialog.show();\r\n        AndroidNetworking.get(Api.TempatIbadah)\r\n                .setPriority(Priority.HIGH)\r\n                .build()\r\n                .getAsJSONObject(new JSONObjectRequestListener() {\r\n                    @Override\r\n                    public void onResponse(JSONObject response) {\r\n                        try {\r\n                            progressDialog.dismiss();\r\n                            JSONArray playerArray = response.getJSONArray(\"tempat_ibadah\");\r\n                            for (int i = 0; i < playerArray.length(); i++) {\r\n                                JSONObject temp = playerArray.getJSONObject(i);\r\n                                ModelPrayPlace dataApi = new ModelPrayPlace();\r\n                                dataApi.setTxtTempatIbadah(temp.getString(\"nama\"));\r\n                                dataApi.setLatitude(temp.getDouble(\"latitude\"));\r\n                                dataApi.setLongitude(temp.getDouble(\"longitude\"));\r\n                                modelPrayPlace.add(dataApi);\r\n                                showPrayPlace();\r\n                            }\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                            Toast.makeText(PrayPlaceActivity.this,\r\n                                    \"Gagal menampilkan data!\", Toast.LENGTH_SHORT).show();\r\n                        }\r\n                    }\r\n\r\n                    @Override\r\n                    public void onError(ANError anError) {\r\n                        progressDialog.dismiss();\r\n                        Toast.makeText(PrayPlaceActivity.this,\r\n                                \"Tidak ada jaringan internet!\", Toast.LENGTH_SHORT).show();\r\n                    }\r\n                });\r\n    }\r\n\r\n    private void showPrayPlace() {\r\n        prayPlaceAdapter = new PrayPlaceAdapter(modelPrayPlace);\r\n        rvPrayPlace.setAdapter(prayPlaceAdapter);\r\n    }\r\n\r\n    @Override\r\n    public boolean onOptionsItemSelected(MenuItem item) {\r\n        if (item.getItemId() == android.R.id.home) {\r\n            finish();\r\n            return true;\r\n        }\r\n        return super.onOptionsItemSelected(item);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/wisma/activities/PrayPlaceActivity.java b/app/src/main/java/com/example/wisma/activities/PrayPlaceActivity.java
+--- a/app/src/main/java/com/example/wisma/activities/PrayPlaceActivity.java	(revision deef87670465e6293fcba9420124104fc3554fa6)
++++ b/app/src/main/java/com/example/wisma/activities/PrayPlaceActivity.java	(date 1686930979230)
+@@ -1,15 +1,15 @@
+ package com.example.wisma.activities;
+ 
+-import androidx.appcompat.app.AppCompatActivity;
+-import androidx.appcompat.widget.Toolbar;
+-import androidx.recyclerview.widget.LinearLayoutManager;
+-import androidx.recyclerview.widget.RecyclerView;
+-
+ import android.app.ProgressDialog;
+ import android.os.Bundle;
+ import android.view.MenuItem;
+ import android.widget.Toast;
+ 
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.appcompat.widget.Toolbar;
++import androidx.recyclerview.widget.LinearLayoutManager;
++import androidx.recyclerview.widget.RecyclerView;
++
+ import com.androidnetworking.AndroidNetworking;
+ import com.androidnetworking.common.Priority;
+ import com.androidnetworking.error.ANError;
+@@ -67,7 +67,7 @@
+                     public void onResponse(JSONObject response) {
+                         try {
+                             progressDialog.dismiss();
+-                            JSONArray playerArray = response.getJSONArray("tempat_ibadah");
++                            JSONArray playerArray = response.getJSONArray("religis");
+                             for (int i = 0; i < playerArray.length(); i++) {
+                                 JSONObject temp = playerArray.getJSONObject(i);
+                                 ModelPrayPlace dataApi = new ModelPrayPlace();
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'com.google.gms.google-services'\r\n}\r\n\r\nandroid {\r\n    lintOptions {\r\n        abortOnError false\r\n    }\r\n    namespace 'com.example.wisma'\r\n    compileSdk 33\r\n    buildToolsVersion \"33.0.0\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.wisma\"\r\n        minSdk 29\r\n        targetSdk 33\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation 'androidx.appcompat:appcompat:1.3.1'\r\n    implementation 'com.google.android.material:material:1.4.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'\r\n    implementation 'androidx.recyclerview:recyclerview:1.2.1'\r\n    implementation 'androidx.cardview:cardview:1.0.0'\r\n    implementation 'com.google.firebase:firebase-auth:21.0.1'\r\n    implementation 'com.google.firebase:firebase-database:20.0.0'\r\n    implementation 'com.google.android.gms:play-services-auth:19.2.0'\r\n    implementation 'com.amitshekhar.android:android-networking:1.0.2'\r\n    implementation 'com.google.android.gms:play-services-maps:18.0.0'\r\n    implementation 'com.google.android.gms:play-services-location:18.0.0'\r\n    implementation 'com.github.bumptech.glide:glide:4.12.0'\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision deef87670465e6293fcba9420124104fc3554fa6)
++++ b/app/build.gradle	(date 1686895344926)
+@@ -13,7 +13,7 @@
+ 
+     defaultConfig {
+         applicationId "com.example.wisma"
+-        minSdk 29
++        minSdk 28
+         targetSdk 33
+         versionCode 1
+         versionName "1.0"
+@@ -46,6 +46,7 @@
+     implementation 'com.google.android.gms:play-services-maps:18.0.0'
+     implementation 'com.google.android.gms:play-services-location:18.0.0'
+     implementation 'com.github.bumptech.glide:glide:4.12.0'
++    implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
+     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+     testImplementation 'junit:junit:4.13.2'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
