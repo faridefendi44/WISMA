@@ -40,12 +40,28 @@
             android:textSize="30sp"/>
 
         <TextView
+            android:id="@+id/tv_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Add the location you want to review"/>
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter Location Here..."
+            android:gravity="top|start"
+            android:layout_margin="10dp"
+            android:background="@color/white"/>
+
+        <TextView
             android:id="@+id/tv_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Write your impression about location below"/>
-        
+
         <EditText
             android:id="@+id/review"
             android:layout_width="match_parent"

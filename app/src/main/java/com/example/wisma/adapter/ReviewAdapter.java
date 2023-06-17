@@ -1,4 +1,4 @@
-package com.example.wisma.activities;
+package com.example.wisma.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,19 +9,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wisma.R;
+import com.example.wisma.model.ModelReview;
 
 import java.util.List;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder> {
-    private List<Review> reviewList;
+    private List<ModelReview> reviewList;
     private OnItemClickListener listener;
 
-    public ReviewAdapter(List<Review> reviewList) {
+    public ReviewAdapter(List<ModelReview> reviewList) {
         this.reviewList = reviewList;
     }
 
     public interface OnItemClickListener {
-        void onItemClick(Review review);
+        void onItemClick(ModelReview review);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -38,7 +39,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
-        Review review = reviewList.get(position);
+        ModelReview review = reviewList.get(position);
         holder.bind(review);
 
         holder.itemView.setOnClickListener(v -> {
@@ -55,16 +56,19 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
     public static class ReviewViewHolder extends RecyclerView.ViewHolder {
         private TextView tvTitle;
+        private TextView tvLocation;
         private TextView tvDescription;
 
         public ReviewViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_item_title);
+            tvLocation = itemView.findViewById(R.id.tv_item_location);
             tvDescription = itemView.findViewById(R.id.tv_item_description);
         }
 
-        public void bind(Review review) {
+        public void bind(ModelReview review) {
             tvTitle.setText(review.getAuthor());
+            tvLocation.setText(review.getLocation());
             tvDescription.setText(review.getDescription());
         }
     }

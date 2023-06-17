@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wisma.R;
+import com.example.wisma.adapter.ReviewAdapter;
+import com.example.wisma.model.ModelReview;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +32,7 @@ public class Reviews extends AppCompatActivity implements ReviewAdapter.OnItemCl
     private ImageButton btn_add, btn_back;
     private RecyclerView reviews;
     private ReviewAdapter reviewAdapter;
-    private List<Review> reviewList;
+    private List<ModelReview> reviewList;
     private DatabaseReference databaseReference;
     private ValueEventListener valueEventListener;
     private FirebaseAuth mAuth;
@@ -85,7 +87,7 @@ public class Reviews extends AppCompatActivity implements ReviewAdapter.OnItemCl
             public void onDataChange(DataSnapshot dataSnapshot) {
                 reviewList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Review review = snapshot.getValue(Review.class);
+                    ModelReview review = snapshot.getValue(ModelReview.class);
                     reviewList.add(review);
                 }
                 reviewAdapter.notifyDataSetChanged();
@@ -134,7 +136,7 @@ public class Reviews extends AppCompatActivity implements ReviewAdapter.OnItemCl
             public void onDataChange(DataSnapshot dataSnapshot) {
                 reviewList.clear();
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    Review review = userSnapshot.getValue(Review.class);
+                    ModelReview review = userSnapshot.getValue(ModelReview.class);
                     reviewList.add(review);
                 }
                 reviewAdapter.notifyDataSetChanged();
@@ -156,9 +158,10 @@ public class Reviews extends AppCompatActivity implements ReviewAdapter.OnItemCl
     }
 
     @Override
-    public void onItemClick(Review review) {
+    public void onItemClick(ModelReview review) {
         Intent intent = new Intent(Reviews.this, UpdateReview.class);
         intent.putExtra("author", review.getAuthor());
+        intent.putExtra("location", review.getLocation());
         intent.putExtra("review", review.getDescription());
         intent.putExtra("allreview", review);
         startActivityForResult(intent, REQUEST_CODE_UPDATE_DATA);
@@ -166,7 +169,7 @@ public class Reviews extends AppCompatActivity implements ReviewAdapter.OnItemCl
 
     public void logOut() {
         mAuth.signOut();
-        Intent intent = new Intent(Reviews.this, Login.class);
+        Intent intent = new Intent(Reviews.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
