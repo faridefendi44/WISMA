@@ -12,20 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper2"
+        android:src="@drawable/wallpaper3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-16dp" />
-
-    <ImageView
-        android:id="@+id/iconbar1"
-        android:layout_width="395dp"
-        android:layout_height="40dp"
-        android:src="@drawable/barstatus"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteX="101dp" />
 
     <ImageView
         android:id="@+id/img"
@@ -68,11 +59,11 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="355dp"
-        android:layout_height="101dp"
-        android:text="We invite you to share your experiences by writing reviews and providing ratings for the visited locations. This will assist other users in choosing the right destinations based on their preferences. We hope you enjoy your experience using the WARTA and discover the true charm of Purwokerto through your journey. Happy exploring!"
+        android:layout_width="356dp"
+        android:layout_height="135dp"
+        android:text="We invite you to share your experiences by writing reviews and providing ratings for the visited locations. This will assist other users in choosing the right destinations based on their preferences. We hope you enjoy your experience using WISMA and discover the true charm of Malang through your journey. Happy exploring!"
         android:textColor="@android:color/white"
-        android:textSize="14sp"
+        android:textSize="15sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="380dp" />
@@ -82,24 +73,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:drawableStart="@drawable/img_2"
+        android:foreground="@drawable/border_btn"
         android:text="Register"
         android:textColor="#FFFFFF"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="652dp" />
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="632dp" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:foreground="@drawable/img_3"
+        android:foreground="@drawable/border_btn"
         android:text="Login"
         android:textColor="#FFFFFF"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="652dp" />
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="632dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
