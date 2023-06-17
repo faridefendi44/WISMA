@@ -8,14 +8,17 @@ public class ModelReview implements Serializable {
     private String location;
     private String description;
 
+    private String imgURL;
+
     public ModelReview() {
     }
 
-    public ModelReview(String id, String author, String location, String description) {
+    public ModelReview(String id, String author, String location, String description, String imgURL) {
         this.id = id;
         this.author = author;
         this.location = location;
         this.description = description;
+        this.imgURL = imgURL;
     }
 
     public String getId() {
@@ -48,5 +51,13 @@ public class ModelReview implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 }

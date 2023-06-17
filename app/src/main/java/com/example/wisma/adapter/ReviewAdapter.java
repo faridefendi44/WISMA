@@ -3,11 +3,13 @@ package com.example.wisma.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.wisma.R;
 import com.example.wisma.model.ModelReview;
 
@@ -59,17 +61,23 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
         private TextView tvLocation;
         private TextView tvDescription;
 
+        private ImageView recImage;
+
         public ReviewViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_item_title);
             tvLocation = itemView.findViewById(R.id.tv_item_location);
             tvDescription = itemView.findViewById(R.id.tv_item_description);
+            recImage = itemView.findViewById(R.id.recImage);
         }
 
         public void bind(ModelReview review) {
             tvTitle.setText(review.getAuthor());
             tvLocation.setText(review.getLocation());
             tvDescription.setText(review.getDescription());
+
+
+            Glide.with(itemView).load(review.getImgURL()).into(recImage);
         }
     }
 }

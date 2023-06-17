@@ -107,7 +107,7 @@ public class Login extends AppCompatActivity {
 
                                     if (task.isSuccessful()) {
                                         Toast.makeText(Login.this, "Authentication succes.", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(Login.this, MainActivity.class);
+                                        Intent intent = new Intent(Login.this, Reviews.class);
                                         startActivity(intent);
                                         finish();
                                     } else {
@@ -132,7 +132,7 @@ public class Login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(),Reviews.class);
                                     startActivity(intent);
                                 }else {
                                     Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
