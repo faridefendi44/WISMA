@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/arrow_right"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,9 +24,9 @@
         android:textSize="40sp"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="350dp"/>
+        android:layout_marginBottom="320dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,17 +35,17 @@
         android:textSize="16sp"
         android:textColor="@color/white"
         android:justificationMode="inter_word"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="410dp"/>
+        android:layout_marginBottom="100dp"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/pagination_2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="650dp"/>
+        android:layout_marginBottom="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
