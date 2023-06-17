@@ -4,81 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper2"
+    android:padding="20dp"
     tools:context=".activities.Welcome2">
 
-
     <ImageView
-        android:id="@+id/wallpaper1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-38dp" />
-
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="24dp"
-        android:layout_height="16dp"
-        android:src="@drawable/img"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="627dp" />
-
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="24dp"
-        android:layout_height="16dp"
-        android:src="@drawable/img_1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="223dp"
-        tools:layout_editor_absoluteY="627dp" />
-
-    <ImageView
-        android:id="@+id/img2"
-        android:layout_width="24dp"
-        android:layout_height="16dp"
-        android:src="@drawable/img_1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="627dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="238dp"
-        android:layout_height="34dp"
-        android:text="Find Destination"
-        android:textColor="@android:color/white"
-        android:textSize="30dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="386dp"
-        android:layout_height="199dp"
-        android:text="WISMA provides a list of interesting tourist destinations in Malang, complete with detailed information such as location descriptions, operating hours, ticket prices, and directions. You can select the places you wish to visit and view reviews from previous visitors. Whether you're looking to explore the stunning landscapes of Mount Bromo, immerse yourself in the cultural heritage of the Jatim Park, or indulge in the breathtaking beauty of Coban Rondo Waterfall, WISMA has got you covered. Let's embark on an exciting adventure in Malang together!"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="378dp" />
-
-    <Button
-        android:id="@+id/btnNext2"
+        android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:foreground="@drawable/border_btn"
-        android:text="Next"
-        android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="667dp" />
+        android:src="@drawable/arrow_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Destination"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="350dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome2"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:justificationMode="inter_word"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="410dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pagination_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="650dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

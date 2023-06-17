@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WISMA</string>
     <string name="web_client_id">383830276577-6fo59oeatjj056c07cj4ss9oa5619a7l.apps.googleusercontent.com</string>
+    <string name="welcome1">Welcome to the world of adventure in the beautiful city of Malang! WISMA is here to assist you in exploring all the beauty and richness that this tourist destination has to offer. We are committed to providing an unforgettable experience to every user.</string>
+    <string name="welcome2">WISMA provides a list of interesting tourist destinations in Malang, complete with detailed information such as location descriptions, operating hours, ticket prices, and directions. You can select the places you wish to visit and view reviews from previous visitors. Whether you\'re looking to explore the stunning landscapes of Mount Bromo, immerse yourself in the cultural heritage of the Jatim Park, or indulge in the breathtaking beauty of Coban Rondo Waterfall, WISMA has got you covered. Let's embark on an exciting adventure in Malang together!</string>
+    <string name="welcome3">We invite you to share your experiences by writing reviews and providing ratings for the visited locations. This will assist other users in choosing the right destinations based on their preferences. We hope you enjoy your experience using WISMA and discover the true charm of Malang through your journey. Happy exploring!</string>
 </resources>
