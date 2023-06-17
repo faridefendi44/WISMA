@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
     FirebaseUser user;
     Button ulasan;
 
+    ImageView aboutus, logout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         user = auth.getCurrentUser();
         nama = findViewById(R.id.tvName);
         ulasan = findViewById(R.id.ulasan);
+        logout = findViewById(R.id.btn_logout);
+        
         if (user == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
@@ -60,6 +65,17 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         else {
             nama.setText(user.getEmail());
         }
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

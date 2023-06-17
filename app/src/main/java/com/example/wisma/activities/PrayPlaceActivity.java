@@ -40,7 +40,7 @@ public class PrayPlaceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pray_place);
 
         tbPlace = findViewById(R.id.toolbar_place);
-        tbPlace.setTitle("Daftar Tempat Ibadah");
+        tbPlace.setTitle("Daftar Tempat Malang");
         setSupportActionBar(tbPlace);
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -1,16 +1,15 @@
 package com.example.wisma.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -43,7 +42,7 @@ public class HotelActivity extends AppCompatActivity implements HotelAdapter.onS
 
 
         tbHotel = findViewById(R.id.toolbar_hotel);
-        tbHotel.setTitle("Daftar Hotel Purwakarta");
+        tbHotel.setTitle("Daftar Hotel Malang");
         setSupportActionBar(tbHotel);
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
