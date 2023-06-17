@@ -17,9 +17,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
-/**
- * Created by Azhar Rivaldi on 22-12-2019.
- */
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
 

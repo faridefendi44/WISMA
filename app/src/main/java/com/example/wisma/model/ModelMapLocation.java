@@ -2,10 +2,6 @@ package com.example.wisma.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
-/**
- * Created by Azhar Rivaldi on 22-12-2019.
- */
-
 public class ModelMapLocation {
 
     public String name;

@@ -14,9 +14,7 @@ import com.example.wisma.model.ModelMain;
 
 import java.util.List;
 
-/**
- * Created by Azhar Rivaldi on 22-12-2019.
- */
+
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 

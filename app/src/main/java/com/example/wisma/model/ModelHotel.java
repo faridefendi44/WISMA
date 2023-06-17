@@ -2,9 +2,6 @@ package com.example.wisma.model;
 
 import java.io.Serializable;
 
-/**
- * Created by Azhar Rivaldi on 22-12-2019.
- */
 
 public class ModelHotel implements Serializable {
 

@@ -1,8 +1,5 @@
 package com.example.wisma.api;
 
-/**
- * Created by Azhar Rivaldi on 22-12-2019.
- */
 
 public class Api {
 

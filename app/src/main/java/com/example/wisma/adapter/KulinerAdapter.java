@@ -17,9 +17,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
-/**
- * Created by Azhar Rivaldi on 22-12-2019.
- */
+
 
 public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.ViewHolder> {
 

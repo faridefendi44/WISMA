@@ -4,15 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F1F1"
+    android:background="@drawable/bg_kece"
+
     tools:context=".activities.Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/logreg"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="Login"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_marginTop="150dp"
@@ -25,7 +39,7 @@
         android:text="Email"
         android:layout_below="@+id/signin"
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:id="@+id/tusername"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
@@ -52,7 +66,7 @@
         android:text="Password"
         android:layout_below="@+id/logusername"
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:id="@+id/tpassword"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
@@ -77,6 +91,7 @@
     <ProgressBar
         android:id="@+id/progressBar"
         android:visibility="gone"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -100,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/others"
-        android:textColor="#232325"
+        android:textColor="#fff"
         android:layout_marginBottom="10dp"
 
         android:layout_above="@id/socialicons"
@@ -137,7 +152,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#232325"
+            android:textColor="#fff"
             android:text="Already have an account?"
             android:layout_centerHorizontal="true"/>
         <TextView
@@ -145,7 +160,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/signup"
             android:textStyle="bold"
-            android:textColor="#232325"
+            android:textColor="#fff"
             android:text="Sign Up"
             android:layout_centerHorizontal="true"/>
 
