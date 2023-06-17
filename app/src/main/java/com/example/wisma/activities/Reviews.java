@@ -51,9 +51,11 @@ public class Reviews extends AppCompatActivity implements ReviewAdapter.OnItemCl
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v.getId() == R.id.btn_back) {
-                    logOut();
-                }
+//                if (v.getId() == R.id.btn_back) {
+//                    logOut();
+//                }
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 

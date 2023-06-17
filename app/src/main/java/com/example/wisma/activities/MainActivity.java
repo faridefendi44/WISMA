@@ -9,6 +9,7 @@ import android.text.format.DateFormat;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ import com.example.wisma.adapter.MainAdapter;
 import com.example.wisma.decoration.LayoutMarginDecoration;
 import com.example.wisma.model.ModelMain;
 import com.example.wisma.utils.Tools;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -35,10 +38,29 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
     TextView tvToday;
     String hariIni;
 
+    FirebaseAuth auth;
+    TextView nama;
+    FirebaseUser user;
+    Button ulasan;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        nama = findViewById(R.id.tvName);
+        ulasan = findViewById(R.id.ulasan);
+        if (user == null){
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            nama.setText(user.getEmail());
+        }
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().getDecorView().setSystemUiVisibility
@@ -52,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         }
 
         tvToday = findViewById(R.id.tvDate);
+
         rvMainMenu = findViewById(R.id.rvMainMenu);
         GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false);
         rvMainMenu.setLayoutManager(mLayoutManager);
@@ -59,11 +82,24 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         rvMainMenu.addItemDecoration(gridMargin);
         rvMainMenu.setHasFixedSize(true);
 
+
         //get Time Now
         Date dateNow = Calendar.getInstance().getTime();
         hariIni = (String) DateFormat.format("EEEE", dateNow);
         getToday();
         setMenu();
+
+        ulasan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Reviews.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
     private void getToday() {
@@ -78,14 +114,11 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         lsMainMenu.add(mdlMainMenu);
         mdlMainMenu = new ModelMain("Kuliner", R.drawable.ic_cafe);
         lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Tempat Ibadah", R.drawable.ic_pray_place);
+        mdlMainMenu = new ModelMain("Religi", R.drawable.ic_pray_place);
         lsMainMenu.add(mdlMainMenu);
         mdlMainMenu = new ModelMain("Wisata", R.drawable.ic_destination);
         lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Komunitas", R.drawable.ic_komunitas);
-        lsMainMenu.add(mdlMainMenu);
-        mdlMainMenu = new ModelMain("Rute Angkot", R.drawable.ic_rute_angkot);
-        lsMainMenu.add(mdlMainMenu);
+
 
         MainAdapter myAdapter = new MainAdapter(lsMainMenu, this);
         rvMainMenu.setAdapter(myAdapter);
@@ -101,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
             case "Kuliner":
                 startActivityForResult(new Intent(MainActivity.this, KulinerActivity.class), 1);
                 break;
-            case "Tempat Ibadah":
+            case "Religi":
                 startActivityForResult(new Intent(MainActivity.this, PrayPlaceActivity.class), 1);
                 break;
             case "Wisata":
