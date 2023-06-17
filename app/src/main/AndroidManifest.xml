@@ -15,7 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:exported="true" android:name=".activities.Welcome1" />
+        <activity  android:exported="true" android:name=".activities.Welcome1">
+            <intent-filter>
+                <action  android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:exported="true" android:name=".activities.Welcome2" />
         <activity android:exported="true" android:name=".activities.Welcome3" />
         <activity android:exported="true" android:name=".activities.UpdateReview" />
@@ -29,12 +34,7 @@
         <activity android:exported="true" android:name=".activities.DetailHotelActivity" />
         <activity android:exported="true" android:name=".activities.HotelActivity" />
         <activity android:exported="true" android:name=".activities.MainActivity" />
-        <activity  android:exported="true" android:name=".activities.Login">
-            <intent-filter>
-                <action  android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity  android:exported="true" android:name=".activities.Login"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
