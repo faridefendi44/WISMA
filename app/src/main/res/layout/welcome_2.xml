@@ -12,20 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper1"
+        android:src="@drawable/wallpaper2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-38dp" />
 
-    <ImageView
-        android:id="@+id/iconbar1"
-        android:layout_width="384dp"
-        android:layout_height="43dp"
-        android:src="@drawable/barstatus"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="16dp" />
 
     <ImageView
         android:id="@+id/img"
@@ -63,18 +55,30 @@
         android:textSize="30dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="388dp" />
+        tools:layout_editor_absoluteY="319dp" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="380dp"
-        android:layout_height="125dp"
-        android:text="WARTA provides a list of interesting tourist destinations in Purwokerto, complete with detailed information such as location descriptions, operating hours, ticket prices, and directions. You can select the places you wish to visit and view reviews from previous visitors."
+        android:layout_width="386dp"
+        android:layout_height="199dp"
+        android:text="WISMA provides a list of interesting tourist destinations in Malang, complete with detailed information such as location descriptions, operating hours, ticket prices, and directions. You can select the places you wish to visit and view reviews from previous visitors. Whether you're looking to explore the stunning landscapes of Mount Bromo, immerse yourself in the cultural heritage of the Jatim Park, or indulge in the breathtaking beauty of Coban Rondo Waterfall, WISMA has got you covered. Let's embark on an exciting adventure in Malang together!"
         android:textColor="@android:color/white"
-        android:textSize="14sp"
+        android:textSize="15sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="441dp" />
+        tools:layout_editor_absoluteY="378dp" />
+
+    <Button
+        android:id="@+id/btnNext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/border_btn"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="667dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

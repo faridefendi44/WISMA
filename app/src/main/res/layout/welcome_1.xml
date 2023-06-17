@@ -12,19 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper"
+        android:src="@drawable/wallpaper1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-4dp" />
 
-    <ImageView
-        android:id="@+id/iconbar1"
-        android:layout_width="367dp"
-        android:layout_height="40dp"
-        android:src="@drawable/barstatus"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="16dp" />
 
     <ImageView
         android:id="@+id/img"
@@ -68,12 +60,24 @@
         android:id="@+id/textView1"
         android:layout_width="374dp"
         android:layout_height="99dp"
-        android:text="Welcome to the world of adventure in the beautiful city of Purwokerto! WARTA is here to assist you in exploring all the beauty and richness that this tourist destination has to offer. We are committed to providing an unforgettable experience to every user."
         android:textColor="@android:color/white"
-        android:textSize="14sp"
+        android:text="Welcome to the world of adventure in the beautiful city of Malang! WISMA is here to assist you in exploring all the beauty and richness that this tourist destination has to offer. We are committed to providing an unforgettable experience to every user."
+        android:textSize="15sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="440dp" />
+
+    <Button
+        android:id="@+id/btnNext1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/border_btn"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="694dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

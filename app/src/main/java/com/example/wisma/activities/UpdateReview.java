@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wisma.R;
+import com.example.wisma.model.ModelReview;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,11 +26,11 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class UpdateReview extends AppCompatActivity {
-    private EditText updateReview;
+    private EditText updateReview, updateLocation;
     private TextView author;
     private ImageButton back;
     private Button update, delete;
-    private Review review;
+    private ModelReview review;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
 
@@ -39,6 +40,7 @@ public class UpdateReview extends AppCompatActivity {
         setContentView(R.layout.edit_desc);
 
         author = findViewById(R.id.author);
+        updateLocation = findViewById(R.id.location);
         updateReview = findViewById(R.id.review);
         back = findViewById(R.id.btn_back);
         update = findViewById(R.id.btn_save);
@@ -47,7 +49,7 @@ public class UpdateReview extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("reviews").child(mAuth.getUid());
 
-        review = (Review) getIntent().getSerializableExtra("allreview");
+        review = (ModelReview) getIntent().getSerializableExtra("allreview");
         if (review == null) {
             Toast.makeText(this, "Failed to get review from intent", Toast.LENGTH_SHORT).show();
             finish();
@@ -55,6 +57,7 @@ public class UpdateReview extends AppCompatActivity {
         }
 
         author.setText(review.getAuthor());
+        updateLocation.setText(review.getLocation());
         updateReview.setText(review.getDescription());
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +84,13 @@ public class UpdateReview extends AppCompatActivity {
     }
 
     private void updateReview() {
+        String updatedLocation = updateReview.getText().toString().trim();
         String updatedDescription = updateReview.getText().toString().trim();
+
+        if (updatedLocation.isEmpty()) {
+            Toast.makeText(this, "Location cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if (updatedDescription.isEmpty()) {
             Toast.makeText(this, "Review cannot be empty", Toast.LENGTH_SHORT).show();
@@ -93,6 +102,7 @@ public class UpdateReview extends AppCompatActivity {
             return;
         }
 
+        review.setLocation(updatedLocation);
         review.setDescription(updatedDescription);
 
         databaseReference.child(review.getId())
@@ -114,7 +124,13 @@ public class UpdateReview extends AppCompatActivity {
     }
 
     private void deleteReview() {
+        String detailLocation = review.getLocation();
         String reviewDescription = review.getDescription();
+
+        if (detailLocation.isEmpty()) {
+            Toast.makeText(this, "Review description cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if (reviewDescription.isEmpty()) {
             Toast.makeText(this, "Review description cannot be empty", Toast.LENGTH_SHORT).show();

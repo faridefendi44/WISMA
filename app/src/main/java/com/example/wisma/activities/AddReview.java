@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wisma.R;
+import com.example.wisma.model.ModelReview;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddReview extends AppCompatActivity {
-    private EditText addReview;
+    private EditText addReview, addLocation;
     private ImageButton back;
     private Button save;
     private FirebaseDatabase firebaseDatabase;
@@ -34,6 +35,7 @@ public class AddReview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_desc);
 
+        addLocation = findViewById(R.id.location);
         addReview = findViewById(R.id.review);
         back = findViewById(R.id.btn_back);
         save = findViewById(R.id.btn_save);
@@ -47,7 +49,7 @@ public class AddReview extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (v.getId() == R.id.btn_back) {
-                    Intent pindah = new Intent(AddReview.this, Reviews.class);
+                    Intent pindah = new Intent(AddReview.this, MainActivity.class);
                     startActivity(pindah);
                 }
             }
@@ -70,9 +72,10 @@ public class AddReview extends AppCompatActivity {
         }
         FirebaseUser currentUser = mAuth.getCurrentUser();
         String author = currentUser.getEmail();
+        String location = addLocation.getText().toString();
         String review = addReview.getText().toString();
         String reviewKey = databaseReference.child("reviews").child(mAuth.getUid()).push().getKey();
-        Review baru = new Review(reviewKey, author, review);
+        ModelReview baru = new ModelReview(reviewKey, author, location, review);
         databaseReference.child("reviews").child(mAuth.getUid()).push().setValue(baru).addOnSuccessListener(this, new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
@@ -92,8 +95,13 @@ public class AddReview extends AppCompatActivity {
             addReview.setError("Required");
             result = false;
         }
+        if (TextUtils.isEmpty(addLocation.getText().toString())) {
+            addLocation.setError("Required");
+            result = false;
+        }
         else {
             addReview.setError(null);
+            addLocation.setError(null);
         }
         return result;
     }

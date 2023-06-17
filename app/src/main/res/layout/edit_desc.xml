@@ -71,6 +71,15 @@
         </RelativeLayout>
 
         <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter Location Here..."
+            android:gravity="top|start"
+            android:layout_margin="10dp"
+            android:background="@color/white"/>
+
+        <EditText
             android:id="@+id/review"
             android:layout_width="match_parent"
             android:layout_height="350dp"
